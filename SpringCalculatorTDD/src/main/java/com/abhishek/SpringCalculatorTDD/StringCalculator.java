@@ -12,7 +12,7 @@ public class StringCalculator {
 		if (numbers.length() == 1) {
 			return stringToInteger(numbers);
 		} else {
-			return getSumOfTwoNumbers(inputNumbers[0], inputNumbers[1]);
+			return getSum(inputNumbers);
 		}
 	}
 
@@ -24,7 +24,11 @@ public class StringCalculator {
 		return Integer.parseInt(number);
 	}
 
-	private int getSumOfTwoNumbers(String firstNumber, String secondNumber) {
-		return Integer.parseInt(firstNumber) + Integer.parseInt(secondNumber);
+	private int getSum(String[] numbers) {
+		int sum = 0;
+		for (String number : numbers) {
+			sum += Integer.parseInt(number);
+		}
+		return sum;
 	}
 }

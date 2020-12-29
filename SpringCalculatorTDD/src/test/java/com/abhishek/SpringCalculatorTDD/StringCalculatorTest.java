@@ -33,9 +33,15 @@ public class StringCalculatorTest {
 	public void twoNumbersNewLineSeperatedReturnSumTest() {
 		assertEquals(calculator.Add("1\n2"), 3);
 	}
-	
+
 	@Test
-	public void threeNumbersDelimitedBothWaysReturnSumTest() {
+	public void threeNumbersNewLineDelimitedReturnSumTest() {
+		assertEquals(calculator.Add("1\n2\n3"), 6);
+	}
+
+	@Test
+	public void threeNumbersCommaDelimitedReturnSumTest() {
 		assertEquals(calculator.Add("1,2,3"), 6);
 	}
+
 }
