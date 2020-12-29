@@ -48,5 +48,10 @@ public class StringCalculatorTest {
 	public void negativeInputReturnsException() throws Exception {
 		calculator.Add("-1");
 	}
+	
+	@Test
+	public void ignoreNumberGreaterThanThousand() throws Exception{
+		assertEquals(calculator.Add("100,21,1000"), 121);
+	}
 
 }
