@@ -23,5 +23,10 @@ public class StringCalculatorTest {
 	public void singleValueTest() {
 		assertEquals(calculator.calculate("1"), 1);
 	}
+	
+	@Test
+	public void twoNumbersCommaSeperatedReturnSumTest() {
+		assertEquals(calculator.calculate("1,2"), 3);
+	}
 
 }
