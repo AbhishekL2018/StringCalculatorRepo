@@ -2,8 +2,10 @@ package com.abhishek.SpringCalculatorTDD;
 
 public class StringCalculator {
 
+	private final String seperator = ",|\n";
+
 	public int Add(String numbers) {
-		String[] inputNumbers = numbers.split(",");
+		String[] inputNumbers = numbers.split(seperator);
 		if (isEmpty(numbers)) {
 			return 0;
 		}
