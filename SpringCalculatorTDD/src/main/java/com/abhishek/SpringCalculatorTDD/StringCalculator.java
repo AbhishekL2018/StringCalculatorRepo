@@ -2,15 +2,15 @@ package com.abhishek.SpringCalculatorTDD;
 
 public class StringCalculator {
 
-	public int calculate(String number) {
-		String[] inputNumbers = number.split(",");
-		if (isEmpty(number)) {
+	public int Add(String numbers) {
+		String[] inputNumbers = numbers.split(",");
+		if (isEmpty(numbers)) {
 			return 0;
 		}
-		if (number.length() == 1) {
-			return stringToInteger(number);
+		if (numbers.length() == 1) {
+			return stringToInteger(numbers);
 		} else {
-			return Integer.parseInt(inputNumbers[0]) + Integer.parseInt(inputNumbers[1]);
+			return getSumOfTwoNumbers(inputNumbers[0], inputNumbers[1]);
 		}
 	}
 
@@ -20,5 +20,9 @@ public class StringCalculator {
 
 	private int stringToInteger(String number) {
 		return Integer.parseInt(number);
+	}
+
+	private int getSumOfTwoNumbers(String firstNumber, String secondNumber) {
+		return Integer.parseInt(firstNumber) + Integer.parseInt(secondNumber);
 	}
 }
