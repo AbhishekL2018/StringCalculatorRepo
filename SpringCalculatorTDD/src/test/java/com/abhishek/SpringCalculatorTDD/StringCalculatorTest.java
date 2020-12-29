@@ -21,7 +21,7 @@ public class StringCalculatorTest {
 	
 	@Test
 	public void singleValueTest() {
-		assertEquals("1", 1);
+		assertEquals(calculator.calculate("1"), 1);
 	}
 
 }
