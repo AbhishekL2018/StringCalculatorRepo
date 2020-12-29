@@ -44,4 +44,9 @@ public class StringCalculatorTest {
 		assertEquals(calculator.Add("1,2,3"), 6);
 	}
 
+	@Test(expected = Exception.class)
+	public void negativeInputReturnsException() {
+		calculator.Add("-1");
+	}
+
 }
