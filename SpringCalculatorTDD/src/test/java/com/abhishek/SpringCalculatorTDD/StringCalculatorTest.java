@@ -44,14 +44,28 @@ public class StringCalculatorTest {
 		assertEquals(calculator.Add("1,2,3"), 6);
 	}
 
-	@Test(expected = Exception.class)
+	@Test
+	public void threeNumbersRandomDelimitedReturnSumTest() throws Exception {
+		assertEquals(calculator.Add("//;\n1;2;3"), 6);
+	}
+
+	/*@Test
 	public void negativeInputReturnsException() throws Exception {
+		try {
+			calculator.Add("-1,-2,3");
+		} catch (IllegalArgumentException e) {
+			assertEquals(e.getMessage(), "Negative numbers are not allowed: -1,-2");
+		}
+	}*/
+
+	@Test(expected = Exception.class)
+	public void negativeInputReturnsExceptionAlternate() throws Exception {
 		calculator.Add("-1");
 	}
-	
+
 	@Test
-	public void ignoreNumberGreaterThanThousand() throws Exception{
-		assertEquals(calculator.Add("100,21,1000"), 121);
+	public void ignoreNumberGreaterThanThousand() throws Exception {
+		assertEquals(calculator.Add("100,21,1001"), 121);
 	}
 
 }
