@@ -4,7 +4,7 @@ public class StringCalculator {
 
 	private final String seperator = ",|\n";
 
-	public int Add(String numbers) {
+	public int Add(String numbers) throws Exception {
 		String[] inputNumbers = numbers.split(seperator);
 		if (isEmpty(numbers)) {
 			return 0;
@@ -24,10 +24,13 @@ public class StringCalculator {
 		return Integer.parseInt(number);
 	}
 
-	private int getSum(String[] numbers) {
+	private int getSum(String[] numbers) throws Exception {
 		int sum = 0;
 		for (String number : numbers) {
-			sum += Integer.parseInt(number);
+			if (stringToInteger(number) < 0) {
+				throw new Exception("negatives not allowed");
+			}
+			sum += stringToInteger(number);
 		}
 		return sum;
 	}

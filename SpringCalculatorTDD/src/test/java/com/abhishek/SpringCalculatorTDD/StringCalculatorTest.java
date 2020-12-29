@@ -15,37 +15,37 @@ public class StringCalculatorTest {
 	}
 
 	@Test
-	public void emptyStringTest() {
+	public void emptyStringTest() throws Exception {
 		assertEquals(calculator.Add(""), 0);
 	}
 
 	@Test
-	public void singleValueTest() {
+	public void singleValueTest() throws Exception {
 		assertEquals(calculator.Add("1"), 1);
 	}
 
 	@Test
-	public void twoNumbersCommaSeperatedReturnSumTest() {
+	public void twoNumbersCommaSeperatedReturnSumTest() throws Exception {
 		assertEquals(calculator.Add("1,2"), 3);
 	}
 
 	@Test
-	public void twoNumbersNewLineSeperatedReturnSumTest() {
+	public void twoNumbersNewLineSeperatedReturnSumTest() throws Exception {
 		assertEquals(calculator.Add("1\n2"), 3);
 	}
 
 	@Test
-	public void threeNumbersNewLineDelimitedReturnSumTest() {
+	public void threeNumbersNewLineDelimitedReturnSumTest() throws Exception {
 		assertEquals(calculator.Add("1\n2\n3"), 6);
 	}
 
 	@Test
-	public void threeNumbersCommaDelimitedReturnSumTest() {
+	public void threeNumbersCommaDelimitedReturnSumTest() throws Exception {
 		assertEquals(calculator.Add("1,2,3"), 6);
 	}
 
 	@Test(expected = Exception.class)
-	public void negativeInputReturnsException() {
+	public void negativeInputReturnsException() throws Exception {
 		calculator.Add("-1");
 	}
 
